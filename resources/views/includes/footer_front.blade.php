@@ -14,8 +14,8 @@
                            href="#!"><i class="fab fa-facebook-f"> </i></a><a
                            class="text-decoration-none icon-item shadow-social"
                            id="instagram"
-                           href="#!"><i class="fab fa-instagram"> </i></a><a
-                           class="text-decoration-none icon-item shadow-social"
+                           href="https://www.instagram.com/accome.id/?next=%2F&hl=id"><i class="fab fa-instagram">
+                            </i></a><a class="text-decoration-none icon-item shadow-social"
                            id="twitter"
                            href="#!"><i class="fab fa-twitter"> </i></a></div>
                 </div>

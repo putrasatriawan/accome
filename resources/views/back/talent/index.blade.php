@@ -20,7 +20,7 @@
                 {{ Session('success') }}
             </div>
             @endif
-            <table class="table table-responsive DIV">
+            <table class="table table-responsive">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

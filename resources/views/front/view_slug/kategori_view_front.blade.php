@@ -49,7 +49,9 @@
                              src="{{  asset('uploads/' . $item->picture) }}"
                              alt="booking" />
                         <div>
-                            <h5 class="fw-medium">{{ $item->name }}</h5>
+                            <h5 class="fw-medium"><a class="link-900 text-decoration-none stretched-link"
+                                   href="{{ route('detailtalent.show' ,$item->id) }}"></a>{{
+                                $item->name }} </h5>
                             <p class="fs--1 mb-3 fw-medium">{{ $item->domisili->nama_domisili }} |
                                 @currency($item->rate)
                                 /Project

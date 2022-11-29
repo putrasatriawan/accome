@@ -15,7 +15,6 @@
                         <span>
                             {{-- {{ Auth::user()->name }} --}}
                             <span class="user-level">Administrator</span>
-
                         </span>
                     </a>
                     <div class="clearfix"></div>
@@ -47,9 +46,9 @@
                         far fa-list-alt"></i>
                         <p>Kategori</p>
                         @php
-                        $kategori =App\Models\Kategori::count();
+                        $talent =App\Models\Talent::count();
                         @endphp
-                        <span class="badge badge-success">{{ $kategori }}</span>
+                        <span class="badge badge-success">4</span>
                     </a>
                 </li>
                 {{-- <li class="nav-item">
@@ -66,9 +65,9 @@
                         far fa-list-alt"></i>
                         <p>Domisili</p>
                         @php
-                        $domisili =App\Models\Domisili::count();
+                        $talent =App\Models\Talent::count();
                         @endphp
-                        <span class="badge badge-success">{{ $domisili }}</span>
+                        <span class="badge badge-success">4</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -77,7 +76,7 @@
                         far fa-list-alt"></i>
                         <p>Tag</p>
                         @php
-                        $tag =App\Models\Tags::count();
+                        $tag =App\Models\Talent::count();
                         @endphp
                         <span class="badge badge-success">{{ $tag }}</span>
                     </a>

@@ -49,7 +49,8 @@
                              alt="booking" />
                         <div>
                             <h5 class="fw-medium"><a class="link-900 text-decoration-none stretched-link"
-                                   href="{{ url('/') }}"></a>{{ $item->name }} </h5>
+                                   href="{{ route('detailtalent.show' ,$item->id) }}"></a>{{
+                                $item->name }} </h5>
                             <p class="fs--1 mb-3 fw-medium">{{ $item->domisili->nama_domisili }} |
                                 @currency($item->rate)
                                 /Project

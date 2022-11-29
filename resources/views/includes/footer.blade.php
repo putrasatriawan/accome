@@ -5,7 +5,7 @@
                 <li class="nav-item">
                     <a class="nav-link"
                        href="https://www.themekita.com">
-                        ThemeKita
+                        Build By Putra
                     </a>
                 </li>
                 <li class="nav-item">
@@ -23,8 +23,8 @@
             </ul>
         </nav>
         <div class="copyright ml-auto">
-            2018, made with <i class="fa fa-heart heart text-danger"></i> by <a
-               href="https://www.themekita.com">ThemeKita</a>
+            2022, made with <i class="fa fa-heart heart text-danger"></i> by <a
+               href="https://www.themekita.com">Accome</a>
         </div>
     </div>
 </footer>

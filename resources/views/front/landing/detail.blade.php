@@ -40,31 +40,37 @@
             </div>
 
             <div class="col-lg-7 pb-5">
-                <h3 class="font-weight-semi-bold"
-                    style="color: #1D3752">{{ $talent->name }}</h3>
-                <hr style="color: black">
+                <div class="containter">
+                    <h3 class="font-weight-semi-bold"
+                        style="color: #1D3752; padding-left:1rem"> {{ $talent->name }}</h3>
+                    <hr style="color: black">
 
-                <h3 class=""> @currency($talent->rate)/Project</h3>
-                <hr style="color: black">
-                <h3 class="font-weight-semi-bold"><i class="
+                    <h3 style=" padding-left:1rem"> @currency($talent->rate)/Project</h3>
+                    <hr style="color: black">
+                    <h3 class="font-weight-semi-bold"
+                        style=" padding-left:1rem"><i class="
                 icon-location-pin"> {{ $talent->domisili->nama_domisili }}</i>
-                </h3>
-                <hr style="color: black">
-                {{-- <p class="mb-4">Desck{!! $talent->body !!}
-                </p> --}}
+                    </h3>
+                    <hr style="color: black">
+                    {{-- <p class="mb-4">Desck{!! $talent->body !!}
+                    </p> --}}
 
 
-                <div class="rounded text-center shadow-lg">
-                    <a class="btn px-3"
-                       href="/"
-                       style="background-color: #EBEBEB">
-                        <center> <i class="fa fab fa-whatsapp mr-1"></i> WHATSAPP US FOR DETAIL</center>
-                    </a>
+                    <div class="rounded text-center shadow-lg">
+                        <a class="btn px-3"
+                           href="/"
+                           style="background-color: #EBEBEB">
+                            <center> <i class="fa fab fa-whatsapp mr-1"></i> WHATSAPP US FOR DETAIL</center>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="row px-xl-5">
+    </div>
+    <div class="row px-xl-5"
+         style="padding-top: 2rem; padding-bottom: 3rem">
+        <div class="card position-lg-relative shadow"
+             style="background-color: #EBEBEB">
             <div class="col">
                 <div class="nav nav-tabs justify-content-center border-secondary mb-4">
                     <a class="nav-item nav-link active"
@@ -85,58 +91,39 @@
                     </div>
                     <div class="tab-pane fade"
                          id="tab-pane-2">
-                        <h4 class="mb-3">Additional Information</h4>
-                        <p>Download CV</p>
-                        <a href="{{ asset('uploads/'.
-                        $talent->cv) }}"><button class="btn btn-primary"
-                                    download=""
-                                    type="button">Download</button></a>
-                        {{-- <p>Eos no lorem eirmod diam diam, eos elitr et gubergren diam sea. Consetetur vero aliquyam
-                            invidunt
-                            duo dolores et duo sit. Vero diam ea vero et dolore rebum, dolor rebum eirmod consetetur
-                            invidunt sed sed et, lorem duo et eos elitr, sadipscing kasd ipsum rebum diam. Dolore diam
-                            stet
-                            rebum sed tempor kasd eirmod. Takimata kasd ipsum accusam sadipscing, eos dolores sit no ut
-                            diam
-                            consetetur duo justo est, sit sanctus diam tempor aliquyam eirmod nonumy rebum dolor
-                            accusam,
-                            ipsum kasd eos consetetur at sit rebum, diam kasd invidunt tempor lorem, ipsum lorem elitr
-                            sanctus eirmod takimata dolor ea invidunt.</p>
                         <div class="row">
-                            <div class="col-md-6">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item px-0">
-                                        Sit erat duo lorem duo ea consetetur, et eirmod takimata.
-                                    </li>
-                                    <li class="list-group-item px-0">
-                                        Amet kasd gubergren sit sanctus et lorem eos sadipscing at.
-                                    </li>
-                                    <li class="list-group-item px-0">
-                                        Duo amet accusam eirmod nonumy stet et et stet eirmod.
-                                    </li>
-                                    <li class="list-group-item px-0">
-                                        Takimata ea clita labore amet ipsum erat justo voluptua. Nonumy.
-                                    </li>
-                                </ul>
+                            <div class="col-md-6 col-sm-6">
+                                <h4 class="mb-3">Additional Information</h4>
+                                <p>Download CV</p>
+                                <a href="{{ asset('uploads/'.
+                        $talent->cv) }}"><button class="btn btn-primary"
+                                            download=""
+                                            type="button">Download</button></a>
                             </div>
-                            <div class="col-md-6">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item px-0">
-                                        Sit erat duo lorem duo ea consetetur, et eirmod takimata.
-                                    </li>
-                                    <li class="list-group-item px-0">
-                                        Amet kasd gubergren sit sanctus et lorem eos sadipscing at.
-                                    </li>
-                                    <li class="list-group-item px-0">
-                                        Duo amet accusam eirmod nonumy stet et et stet eirmod.
-                                    </li>
-                                    <li class="list-group-item px-0">
-                                        Takimata ea clita labore amet ipsum erat justo voluptua. Nonumy.
-                                    </li>
-                                </ul>
+                            <br>
+                            <br>
+                            <div class="col-md-6 pt-5">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle rounded"
+                                            type="button"
+                                            style="#D9D9D9"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                        Tag
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        @foreach ($talent->tags as $tag )
+                                        <li><a class="dropdown-item"
+                                               href="#">{{
+                                                $tag->name
+                                                }}</a>
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                     <div class="tab-pane fade"
                          id="tab-pane-3">
                         <div class="row">
@@ -209,6 +196,7 @@
         </div>
     </div>
 </div>
+
 <!-- Shop Detail End -->
 
 
