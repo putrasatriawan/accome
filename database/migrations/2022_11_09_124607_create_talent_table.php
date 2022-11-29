@@ -22,7 +22,6 @@ class CreateTalentTable extends Migration
             $table->integer('rate');
             $table->string('domisili_id');
             $table->integer('kategori_id');
-            $table->integer('user_id');
             $table->string('picture');
             $table->string('cv');
             $table->boolean('is_active');

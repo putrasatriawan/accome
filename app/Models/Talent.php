@@ -16,7 +16,9 @@ class Talent extends Model
     protected $table = 'talent';
 
     protected $fillable = ([
-        'name', 'slug', 'body', 'rate', 'domisili_id', 'kategori_id', 'user_id', 'picture', 'cv', 'is_active', 'views'
+        'name', 'slug', 'body', 'rate', 'domisili_id', 'kategori_id',
+        // 'user_id',
+        'picture', 'cv', 'is_active', 'views'
     ]);
 
     protected $hidden = [];
@@ -29,10 +31,10 @@ class Talent extends Model
     {
         return $this->belongsTo(kategori::class, 'kategori_id', 'id');
     }
-    public function users()
-    {
-        return $this->belongsTo(User::class, 'user_id', 'id');
-    }
+    // public function users()
+    // {
+    //     return $this->belongsTo(User::class, 'user_id', 'id');
+    // }
     public function domisili()
     {
         return $this->belongsTo(domisili::class, 'domisili_id', 'id');
@@ -45,5 +47,10 @@ class Talent extends Model
     public function tags()
     {
         return $this->belongsToMany(Tags::class);
+    }
+
+    public function image()
+    {
+        return $this->hasMany(Image::class);
     }
 }

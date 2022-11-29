@@ -14,7 +14,7 @@ class AddImageFieldToKategoriTable extends Migration
     public function up()
     {
         Schema::table('kategori', function (Blueprint $table) {
-            $table->text('image');
+            // $table->text('image');
         });
     }
 

@@ -14,8 +14,10 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">User</p>
-                            <h4 class="card-title">10</h4>
+                            <p class="card-category">Talent</p>
+
+                            <h4 class="card-title">{{ $talent }}</h4>
+
                         </div>
                     </div>
                 </div>
@@ -33,8 +35,8 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Artikel</p>
-                            <h4 class="card-title">10</h4>
+                            <p class="card-category">Kategori</p>
+                            <h4 class="card-title">{{ $kategori }}</h4>
                         </div>
                     </div>
                 </div>
@@ -52,8 +54,8 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Kategori</p>
-                            <h4 class="card-title">10</h4>
+                            <p class="card-category">Domisili</p>
+                            <h4 class="card-title">{{ $domisili }}</h4>
                         </div>
                     </div>
                 </div>
@@ -71,8 +73,8 @@
                     </div>
                     <div class="col col-stats ml-3 ml-sm-0">
                         <div class="numbers">
-                            <p class="card-category">Video</p>
-                            <h4 class="card-title">10</h4>
+                            <p class="card-category">Tag</p>
+                            <h4 class="card-title">{{ $tag }}</h4>
                         </div>
                     </div>
                 </div>
@@ -80,7 +82,7 @@
         </div>
     </div>
 </div>
-<div class="col-md-12">
+{{-- <div class="col-md-12">
     <div class="card">
         <div class="card-header">
             <h4 class="card-title">Materi & Artikel</h4>
@@ -168,5 +170,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection

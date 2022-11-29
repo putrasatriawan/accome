@@ -1,19 +1,29 @@
 @extends('layouts.default')
 @section('content')
+
 <div class="col-md-12">
     <div class="card">
         <div class="card-header">
             <div class="card-head-row">
 
-                <div class="card-title">Edit Talent {{ $talent->judul }}</div>
+                <div class="card-title">Edit Talent {{ $talent->name }}</div>
                 <div class="ml-auto">
                     <a href="{{ route('talent.index') }}"
                        class="btn btn-warning"> <i class="fas fa-undo"></i></a>
                 </div>
             </div>
         </div>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <div class="card-body">
-            <form action="{{ route('talent.update', $artikel->id) }}"
+            <form action="{{ url('talent/update', $talent->id) }}"
                   enctype="multipart/form-data"
                   method="POST">
                 @csrf
@@ -21,72 +31,137 @@
                 <div class="form-group">
                     <label for="email2">Nama</label>
                     <input type="text"
-                           class="form-control"
+                           class="form-control @error('name') is-invalid @enderror"
+                           id="name"
                            name="name"
-                           placeholder="Masukan Nama Talent">
+                           value="{{ $talent->name }}"
+                           @error('name')
+                           is-invalid
+                           @enderror>
+                    @error('name')
+                    <div class="text-muted">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
-                    <label for="email2">Rate / Projek</label>
-                    <input type="number"
-                           class="form-control"
+                    <label for="email2">Rate</label>
+                    <input type="text"
+                           class="form-control @error('rate') is-invalid @enderror"
+                           id="rate"
                            name="rate"
-                           placeholder="Masukan Nama Talent">
+                           value="{{ $talent->rate }}">
+                    @error('rate')
+                    <div class="text-muted">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
-                    <label for="body">Body</label>
-                    <textarea id="editor1"
-                              class="form-control"
-                              name="body"
-                              placeholder="Masukan Body">
+                    <label for="">Body</label>
+                    <textarea type="textarea"
+                              class="form-control @error('body') is-invalid @enderror"
+                              id="editor1"
+                              @error('body')
+                              is-invalid
+                              @enderror"
+                              name="body">{{ $talent->body }}
+                              @error('body')
+                              <div class="text-muted">{{ $message }}</div>
+                              @enderror
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <label for="email2">Domisili</label>
-                    <select class="form-control"
-                            name="domisili_id">
-                        @foreach ($domisili as $item)
-                        <option value="{{ $item->id }}">{{ $item->nama_domisili }}</option>
+                    <label for="email2">Kategori</label>
+                    <select class="form-control @error('kategori_id') is-invalid @enderror"
+                            id="kategori_id"
+                            name="kategori_id">
+                        @foreach ($kategori as $item)
+                        @if ($item->id == $talent->kategori_id)
+                        <option value={{
+                                $item->id }} selected='selected'>{{ $item->name }}</option>
+                        @else
+                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @endif
                         @endforeach
+                        @error('kategori_id')
+                        <div class="text-muted">{{ $message }}</div>
+                        @enderror
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="email2">Kategori</label>
-                    <select class="selectpicker form-control"
-                            @error('kategori')
-                            @enderror
-                            name="kategori[]"
+                    <label for="email2">Domisili</label>
+                    <select class="form-control  @error('domisili_id') is-invalid @enderror"
+                            id="domisili_id"
+                            name="domisili_id">
+                        @foreach ($domisili as $item)
+                        @if ($item->id == $talent->domisili_id)
+                        <option value={{
+                                $item->id }} selected='selected'>{{ $item->nama_domisili }}</option>
+                        @else
+                        <option value="{{ $item->id }}">{{ $item->nama_domisili }}</option>
+                        @endif
+                        @endforeach
+                        @error('domisili_id')
+                        <div class="text-muted">{{ $message }}</div>
+                        @enderror
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="email2">Tag</label>
+                    <select class="selectpicker form-control
+                            @error('tag')
+                            is-invalid
+                            @enderror"
+                            name="tags[]"
                             multiple
                             data-live-search="true">
-                        @foreach ($kategori as $item)
-                        <option value="{{ $item->id}}"
-                                @foreach
-                                ($talent->talentkategori as $row)
-                            @if(in_array($item->id,old('kategori',[$row->kategori_id]))) selected="selected"
-                            @endif
-                            @endforeach>
-                            {{ $item->name}}
+                        @foreach ($tag as $item)
+                        <option value="{{ $item->id }}"
+                                @if(in_array($item->id,old ('tag',[]))) selected="selected"
+                            @endif>{{ $item->name }}
                         </option>
                         @endforeach
                     </select>
                 </div>
+
                 <div class="form-group">
-                    <label for="email2">Gambar Talent</label>
+                    <label for="email2">Thumnail Talent</label>
                     <input type="file"
-                           class="form-control"
-                           name="gambar_talent">
+                           class="form-control @error('domisili_id') is-invalid @enderror"
+                           id="picture"
+                           name="picture">
+                    <br>
+                    <img src="{{ asset('uploads/' . $talent->picture) }} "
+                         width="250px"
+                         alt="">
+                    @error('picture')
+                    <div class="text-muted">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
-                    <label for="email2">CV Talent</label>
+                    <label for="email2">CV</label>
                     <input type="file"
                            class="form-control"
+                           id="cv"
                            name="cv">
+                </div>
+                <div class="form-group">
+                    <label for="email2">Portofolio</label>
+                    <input type="file"
+                           class="form-control"
+                           id="images[]"
+                           multiple
+                           name="images">
                 </div>
                 <div class="form-group">
                     <label for="email2">Status</label>
                     <select class="form-control"
+                            id="is_active"
                             name="is_active">
-                        <option value="1">Publish</option>
-                        <option value="0">Draft</option>
+                        <option value="1"
+                                {{
+                                $talent->is_active == '1' ? 'selected' : ''}}>Publish</option>
+                        <option value="0"
+                                {{
+                                $talent->is_active == '0' ? 'selected' : ''}}>Draft</option>
                     </select>
                 </div>
                 <div class="form-group">

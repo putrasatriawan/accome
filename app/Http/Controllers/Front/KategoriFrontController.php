@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Kategori;
+use App\Models\Tags;
 use App\Models\Talent;
 use Illuminate\Http\Request;
 
@@ -86,12 +87,14 @@ class KategoriFrontController extends Controller
     }
     public function show_kategori($slug)
     {
+        $tags = Tags::get();
         $kategori = Kategori::where('slug', $slug)->first();
         if ($kategori) {
             $talent = Talent::where('kategori_id', $kategori->id)->get();
             return view('front.view_slug.kategori_view_front')->with([
                 'talent' => $talent,
                 'kategori' => $kategori,
+                'tags' => $tags
             ]);
         } else {
             return redirect('/');

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Talent;
+use App\Models\Tags;
 use Illuminate\Http\Request;
+
 
 class LandingController extends Controller
 {
@@ -14,7 +17,12 @@ class LandingController extends Controller
      */
     public function index()
     {
-        return view('front.landing.index');
+        $talent = Talent::all();
+        $tags = $tags = Tags::get();
+        return view('front.landing.index')->with([
+            'talent' => $talent,
+            'tags' => $tags
+        ]);
     }
 
     /**

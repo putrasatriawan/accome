@@ -4,7 +4,7 @@
         <div class="sidebar-content">
             <div class="user">
                 <div class="avatar-sm float-left mr-2">
-                    <img src="{{ asset('back/assets/img/profile.jpg') }}"
+                    <img src="{{ asset('front/assets_front_home/img/accome/orang1.png') }}"
                          alt="..."
                          class="avatar-img rounded-circle">
                 </div>
@@ -15,31 +15,10 @@
                         <span>
                             {{-- {{ Auth::user()->name }} --}}
                             <span class="user-level">Administrator</span>
-                            <span class="caret"></span>
+
                         </span>
                     </a>
                     <div class="clearfix"></div>
-
-                    <div class="collapse in"
-                         id="collapseExample">
-                        <ul class="nav">
-                            <li>
-                                <a href="#profile">
-                                    <span class="link-collapse">My Profile</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#edit">
-                                    <span class="link-collapse">Edit Profile</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#settings">
-                                    <span class="link-collapse">Settings</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
             <ul class="nav nav-primary">
@@ -48,7 +27,7 @@
                         <i class="
                         fas fa-home"></i>
                         <p>Dashboard</p>
-                        <span class="badge badge-success">4</span>
+                        <span class="badge badge-success"></span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -56,7 +35,10 @@
                         <i class="
                         far fa-list-alt"></i>
                         <p>Talent</p>
-                        <span class="badge badge-success">4</span>
+                        @php
+                        $talent =App\Models\Talent::count();
+                        @endphp
+                        <span class="badge badge-success">{{ $talent }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -64,7 +46,10 @@
                         <i class="
                         far fa-list-alt"></i>
                         <p>Kategori</p>
-                        <span class="badge badge-success">4</span>
+                        @php
+                        $kategori =App\Models\Kategori::count();
+                        @endphp
+                        <span class="badge badge-success">{{ $kategori }}</span>
                     </a>
                 </li>
                 {{-- <li class="nav-item">
@@ -80,7 +65,10 @@
                         <i class="
                         far fa-list-alt"></i>
                         <p>Domisili</p>
-                        <span class="badge badge-success">4</span>
+                        @php
+                        $domisili =App\Models\Domisili::count();
+                        @endphp
+                        <span class="badge badge-success">{{ $domisili }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -88,7 +76,10 @@
                         <i class="
                         far fa-list-alt"></i>
                         <p>Tag</p>
-                        <span class="badge badge-success">4</span>
+                        @php
+                        $tag =App\Models\Tags::count();
+                        @endphp
+                        <span class="badge badge-success">{{ $tag }}</span>
                     </a>
                 </li>
                 {{-- <li class="nav-item">

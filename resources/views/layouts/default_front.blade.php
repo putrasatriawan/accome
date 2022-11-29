@@ -24,24 +24,24 @@
       <!-- ===============================================-->
       <link rel="apple-touch-icon"
             sizes="180x180"
-            href="{{ asset('front/assets_front_home/img/accome/logotop.png') }}">
+            href="{{ asset('front/assets_front_home/img/accome/headeraccome.png') }}">
       <link rel="icon"
             type="image/png"
             sizes="32x32"
-            href="{{ asset('front/assets_front_home/img/accome/logotop.png') }}">
+            href="{{ asset('front/assets_front_home/img/accome/headeraccome.png') }}">
       <link rel="icon"
             type="image/png"
             sizes="16x16"
-            href="{{ asset('front/assets_front_home/img/accome/logotop.png') }}">
+            href="{{ asset('front/assets_front_home/img/accome/headeraccome.png') }}">
       <link rel="shortcut icon"
             type="image/x-icon"
-            href="{{ asset('front/assets_front_home/img/accome/logotop.png')}}">
+            href="{{ asset('front/assets_front_home/img/accome/headeraccome.png')}}">
       <link rel="
             manifest"
-            href="{{ asset('front/assets_front_home/img/accome/logotop.png')}}">
+            href="{{ asset('front/assets_front_home/img/accome/headeraccome.png')}}">
       <meta name="
             msapplication-TileImage"
-            content="{{ asset('front/assets_front_home/img/accome/logotop.png')}}">
+            content="{{ asset('front/assets_front_home/img/accome/headeraccome.png')}}">
       <meta name="theme-color"
             content="#ffffff">
 
@@ -78,6 +78,7 @@
             @include('includes.js_front')
             @include('includes.footer_front')
       </main>
+      @stack('scriptss')
 </body>
 
 </html>

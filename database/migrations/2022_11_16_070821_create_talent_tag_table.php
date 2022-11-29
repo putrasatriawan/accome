@@ -16,7 +16,7 @@ class CreateTalentTagTable extends Migration
         Schema::create('tags_talent', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('talent_id');
-            $table->integer('tag_id');
+            $table->integer('tags_id');
             $table->timestamps();
         });
     }

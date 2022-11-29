@@ -9,24 +9,28 @@
                 <div class="separator"></div>
             </div>
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle"
+                <button class="btn btn-secondary dropdown-toggle rounded"
                         type="button"
+                        style="#D9D9D9"
                         data-bs-toggle="dropdown"
                         aria-expanded="false">
-                    Dropdown button
+                    TAG CATEGORY
                 </button>
                 <ul class="dropdown-menu">
+                    @foreach ($tags as $item)
                     <li><a class="dropdown-item"
-                           href="#">Action</a></li>
-                    <li><a class="dropdown-item"
-                           href="#">Another action</a></li>
-                    <li><a class="dropdown-item"
-                           href="#">Something else here</a></li>
+                           href="{{ url(
+                            'tags-talent/'. $item->id) }}">{{
+                            $item->name
+                            }}</a>
+                    </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
     </div>
 </div>
+@include('front.components.bannerup')
 <div class="container">
     <div class="row row-cols-lg-4 row-cols-md-4 row-cols-2 flex-center">
         @foreach ($talent as $item)
@@ -41,12 +45,15 @@
                              alt="shape" /></div>
                     <div class="card-body p-3">
                         <img class="mb-4 mt-2 rounded-2 w-100"
+                             style="max-height: 250px; max-width:250px"
                              src="{{  asset('uploads/' . $item->picture) }}"
                              alt="booking" />
                         <div>
                             <h5 class="fw-medium"><a class="link-900 text-decoration-none stretched-link"
-                                   href="{{ url('/') }}"></a>{{ $item->name }} </h5>
-                            <p class="fs--1 mb-3 fw-medium">{{ $item->domisili->nama_domisili }} |
+                                   href="{{ route('detailtalent.show' ,$item->id) }}"></a>{{
+                                $item->name }} </h5>
+                            <p class="fs--1 mb-3 fw-medium">{{
+                                $item->domisili->nama_domisili }} |
                                 @currency($item->rate)
                                 /Project
                             </p>
@@ -59,14 +66,18 @@
                                                  style="width: 260px;border-radius:18px;">
                                                 <div class="card-body py-3">
                                                     <div class="d-flex">
-                                                        <div style="margin-right: 10px"> <img class="rounded-circle"
+                                                        <div style="margin-right: 10px">
+                                                            <img class="rounded-circle"
                                                                  src="{{ asset('front/assets_front_home/img/steps/favorite-placeholder.png') }}"
                                                                  width="50"
-                                                                 alt="favorite" /></div>
+                                                                 alt="favorite" />
+                                                        </div>
                                                         <div>
-                                                            <h5 class="fw-medium mb-3">Aku Bisa </h5>
+                                                            <h5 class="fw-medium mb-3">Aku
+                                                                Bisa </h5>
                                                             @foreach ($item->tags as $tag )
-                                                            <p class="fs--1 mb-1 fw-medium">{{ $tag->name }}
+                                                            <p class="fs--1 mb-1 fw-medium">
+                                                                {{ $tag->name }}
                                                             </p>
                                                             @endforeach
                                                         </div>

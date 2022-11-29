@@ -15,7 +15,7 @@ class CreateKategorisTable extends Migration
     {
         Schema::create('kategori', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->renameColumn('nama_kategori', 'renameColumn');
+            $table->string('name');
             $table->string('slug');
             $table->text('image');
             $table->boolean('is_active');

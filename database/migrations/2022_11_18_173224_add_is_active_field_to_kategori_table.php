@@ -14,7 +14,7 @@ class AddIsActiveFieldToKategoriTable extends Migration
     public function up()
     {
         Schema::table('kategori', function (Blueprint $table) {
-            $table->boolean('is_active');
+            // $table->boolean('is_active');
         });
     }
 

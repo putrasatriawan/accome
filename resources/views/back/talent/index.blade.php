@@ -25,9 +25,9 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Nama</th>
-                        <th scope="col">User</th>
+                        {{-- <th scope="col">User</th> --}}
                         <th scope="col">Rate</th>
-                        <th scope="col">Body</th>
+                        {{-- <th scope="col">Body</th> --}}
                         <th scope="col">Domisili</th>
                         <th scope="col">Tag</th>
                         {{-- <th scope="col">Status</th> --}}
@@ -42,12 +42,12 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
-                        <td>{{ $item->users->name }}</td>
+                        {{-- <td>{{ $item->users->name }}</td> --}}
                         <td>{{ $item->rate }}</td>
-                        <td>{!! $item->body !!}</td>
+                        {{-- <td>{!! $item->body !!}</td> --}}
                         <td>{{ $item->domisili->nama_domisili }}</td>
                         <td>@foreach($item->tags as $tag)
-                            <ul>
+                            <ul class="list-unstyled">
                                 <li>{{ $tag->name }}</li>
                             </ul>
                             @endforeach
@@ -68,9 +68,10 @@
                         $item->cv) }}"><button class="btn btn-primary"
                                         download=""
                                         type="button">Download</button></a></td>
-                        <td><a href="{{ route('talent.edit' ,$item->id) }}"
+                        <td>
+                            {{-- <a href="{{ route('talent.edit' ,$item->id) }}"
                                class="btn btn-primary btn-sm"> <i class="
-                                fas fa-edit"></i></a>
+                                fas fa-edit"></i></a> --}}
                             <form action="{{ route('talent.destroy', $item->id) }}"
                                   method="post"
                                   class="d-inline">

@@ -18,4 +18,9 @@ class Tags extends Model
     {
         return $this->belongsToMany(Talent::class);
     }
+
+    public function tagsTalent()
+    {
+        return $this->hashMany(TagsTalent::class);
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tags;
 use App\Models\Talent;
 use Illuminate\Http\Request;
 
@@ -16,8 +17,10 @@ class ListTalentController extends Controller
     public function index()
     {
         $talent = Talent::all();
+        $tags = $tags = Tags::get();
         return view('front.landing.listalltalent')->with([
-            'talent' => $talent
+            'talent' => $talent,
+            'tags' => $tags
         ]);
     }
 

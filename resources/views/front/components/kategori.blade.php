@@ -27,8 +27,7 @@
                                 <h4 class="text-secondary fw-medium"><a
                                        class="link-900 text-decoration-none stretched-link"
                                        href="{{ url(
-                                        'kategori-talent/'. $item->slug) }}">{{ $item->name }}</a></h4><span
-                                      class="fs-1 fw-medium">$5,42k</span>
+                                        'kategori-talent/'. $item->slug) }}">{{ $item->name }}</a></h4>
                             </div>
                             <div class="d-flex align-items-center">
                                 <span class="fs-0 fw-medium">{{

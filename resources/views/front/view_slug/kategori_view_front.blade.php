@@ -2,9 +2,36 @@
 @section('content')
 
 <div class="container"
-     style="padding-top: 7rem;">
-    <a href="#"><i class="fas fa-home"></i></a>
+     style="padding-top: 160px;">
+    <div class="row ">
+        <div class="d-flex justify-content-between">
+            <div style="text-align: start">
+                <a href="{{ '/' }}"><i class="fas fa-home"></i></a>
+                <div class="separator"></div>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle rounded"
+                        type="button"
+                        style="#D9D9D9"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                    TAG CATEGORY
+                </button>
+                <ul class="dropdown-menu">
+                    @foreach ($tags as $item)
+                    <li><a class="dropdown-item"
+                           href="{{ url(
+                            'tags-talent/'. $item->id) }}">{{
+                            $item->name
+                            }}</a>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
+@include('front.components.bannerup')
 <div class="container">
     <div class="row row-cols-lg-4 row-cols-md-4 row-cols-2 flex-center">
         @foreach ($talent as $item)
@@ -39,6 +66,7 @@
                                                         <div style="margin-right: 10px"> <img class="rounded-circle"
                                                                  src="{{ asset('front/assets_front_home/img/steps/favorite-placeholder.png') }}"
                                                                  width="50"
+                                                                 b
                                                                  alt="favorite" /></div>
                                                         <div>
                                                             <h5 class="fw-medium mb-3">Aku Bisa </h5>
@@ -51,14 +79,6 @@
                                             </div>
                                             <button class="btn"> <i class="icon-tag"></i></button>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="text-align">
-                                        <a href="">
-                                            <i class="
-                                           icon-cursor"></i>
-                                        </a>
                                     </div>
                                 </div>
                             </div>

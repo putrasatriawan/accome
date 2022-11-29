@@ -22,10 +22,8 @@ class KategoriController extends Controller
     public function index()
     {
         $kategori = Kategori::all();
-        $kategoristage = KategoriStage::all();
         return view('back.kategori.index')->with([
             'kategori' => $kategori,
-            'kategoristage' => $kategoristage,
         ]);
     }
 
@@ -36,9 +34,9 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        $kategoristage = KategoriStage::all();
+        $kategori = Kategori::all();
         return view('back.kategori.create')->with([
-            'kategoristage' => $kategoristage
+            'kategori' => $kategori,
         ]);
     }
 

@@ -3,7 +3,7 @@
      data-navbar-on-scroll"
      mb-5>
        <div class="container"><a class="navbar-brand"
-                 href="/"><img src="{{ asset('front/assets_front_home/img/accome/logo.png') }}"
+                 href="/"><img src="{{ asset('front/assets_front_home/img/accome/logotop.png') }}"
                           height="70"
                           alt="logo" /></a>
               <button class="navbar-toggler"
@@ -24,10 +24,10 @@
                                       href="{{ route('testimony.index') }}">Testimony</a></li>
                             <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium"
                                       aria-current="page"
-                                      href="#booking">About</a></li>
+                                      href="{{ route('about.index') }}">About</a></li>
                             <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium"
                                       aria-current="page"
-                                      href="#testimonial">Contact</a>
+                                      href="{{ route('contact.index') }}">Contact</a>
 
                      </ul>
               </div>

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Domisili;
+use App\Models\Kategori;
+use App\Models\Tags;
+use App\Models\Talent;
 use Illuminate\Http\Request;
 
 class DashboardbackController extends Controller
@@ -13,7 +17,16 @@ class DashboardbackController extends Controller
      */
     public function index()
     {
-        return view('back.dashboard');
+        $talent = Talent::count();
+        $kategori = Kategori::count();
+        $domisili = Domisili::count();
+        $tag = Tags::count();
+        return view('back.dashboard')->with([
+            'talent' => $talent,
+            'kategori' => $kategori,
+            'domisili' => $domisili,
+            'tag' => $tag
+        ]);
     }
 
     /**

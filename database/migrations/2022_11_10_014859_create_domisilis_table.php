@@ -15,7 +15,7 @@ class CreateDomisilisTable extends Migration
     {
         Schema::create('domisili', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->renameColumn('nama_domisili', 'name');
+            $table->string('nama_domisili');
             $table->string('slug');
 
             $table->softDeletes();

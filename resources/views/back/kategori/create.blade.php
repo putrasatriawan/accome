@@ -32,12 +32,12 @@
                            name="desc"
                            placeholder="Masukan Deskripsi Maks 80 Karakter">
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="email2">Gambar Kategori</label>
                     <input type="file"
                            class="form-control"
                            name="image">
-                </div>
+                </div> --}}
                 {{-- <div class="form-group">
                     <label for="email2">Kategori Parent</label>
                     <select class="form-control"
@@ -63,9 +63,9 @@
                            id="image"
                            name="image">
                     <br>
-                    <img src="{{ asset('uploads/' . $kategori->image) }} "
+                    {{-- <img src="{{ asset('uploads/' . $kategori->image) }} "
                          width="250px"
-                         alt="">
+                         alt=""> --}}
                 </div>
                 <div class="form-group">
                     <button class="btn btn-success"
